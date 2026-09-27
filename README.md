@@ -6,7 +6,7 @@
 ![Python](https://img.shields.io/badge/Python-3.11%2B-3776AB)
 ![License](https://img.shields.io/badge/License-MIT-teal)
 
-Independent educational project inspired by the quantitative-finance and risk-management themes of [Bocconi's MAFINRISK programme](https://www.unibocconi.it/en/programs/specialized-masters-programs/mafinrisk-master-quantitative-finance-and-risk-management). It is not an official Bocconi assignment, endorsed product, or claim of programme enrolment.
+Independent educational project inspired by the quantitative-finance and risk-management themes of [Bocconi's MAFINRISK programme] for my personal practice and interest. (https://www.unibocconi.it/en/programs/specialized-masters-programs/mafinrisk-master-quantitative-finance-and-risk-management). 
 
 ![Efficient frontier and portfolio allocations](docs/efficient_frontier.svg)
 
