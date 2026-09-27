@@ -73,7 +73,7 @@ def build_report(
             "font.size": 10,
             "axes.spines.top": False,
             "axes.spines.right": False,
-            "svg.hashsalt": "mafinrisk",
+            "svg.hashsalt": "portfolio-optimizer",
         }
     )
     fig, (ax, bx) = plt.subplots(1, 2, figsize=(13.5, 5.6), gridspec_kw={"width_ratios": [1.25, 1]})
@@ -113,7 +113,7 @@ def build_report(
     bx.yaxis.set_major_formatter(PercentFormatter(1))
     bx.legend(frameon=False, fontsize=8)
     fig.suptitle(
-        "MEAN–VARIANCE  /  PORTFOLIO LAB",
+        "PORTFOLIO OPTIMIZER",
         x=0.07,
         ha="left",
         fontsize=20,
@@ -131,8 +131,7 @@ def build_report(
     fig.text(
         0.07,
         0.02,
-        "Independent educational project inspired by MAFINRISK themes. "
-        "Estimated returns are not forecasts or realized performance.",
+        "Personal practice project. Estimated returns are not forecasts or realized performance.",
         fontsize=8,
         color="#576574",
     )

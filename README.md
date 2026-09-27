@@ -1,12 +1,12 @@
-# Mean–Variance Portfolio Lab
+# portfolio-optimizer
 
 **A reproducible Python research project connecting portfolio theory, numerical optimization, and risk management.**
 
-[![Tests](https://github.com/talexkloen/mafinrisk-portfolio-optimizer/actions/workflows/ci.yml/badge.svg)](https://github.com/talexkloen/mafinrisk-portfolio-optimizer/actions/workflows/ci.yml)
+[![Tests](https://github.com/talexkloen/portfolio-optimizer/actions/workflows/ci.yml/badge.svg)](https://github.com/talexkloen/portfolio-optimizer/actions/workflows/ci.yml)
 ![Python](https://img.shields.io/badge/Python-3.11%2B-3776AB)
 ![License](https://img.shields.io/badge/License-MIT-teal)
 
-Independent educational project inspired by quantitative-finance and risk-management themes for my personal practice and interest.
+I'm a quantitative finance student, and I built this project for my own practice.
 
 ![Efficient frontier and portfolio allocations](docs/efficient_frontier.svg)
 
@@ -36,9 +36,9 @@ source .venv/bin/activate         # Windows: .venv\Scripts\activate
 python -m pip install -e '.[dev]'
 
 # The sample CSV is already committed. Regenerate it deterministically if desired:
-mafinrisk sample --seed 42 --output data/sample_prices.csv
+portfolio-optimizer sample --seed 42 --output data/sample_prices.csv
 
-mafinrisk analyze \
+portfolio-optimizer analyze \
   --prices data/sample_prices.csv \
   --output reports \
   --max-weight 0.40 \
@@ -67,7 +67,7 @@ Rates and weights are decimals: `0.02` means 2%. Defaults assume daily observati
 
 ```python
 import pandas as pd
-from mafinrisk import (
+from portfolio_optimizer import (
     PortfolioOptimizer,
     estimate_moments,
     load_prices,
@@ -143,7 +143,7 @@ date,Asset_A,Asset_B,Asset_C
 This snippet illustrates the schema; a real run needs at least three returns in **each** train/test segment. Supply enough observations for meaningful estimation. With three assets, a 40% cap is feasible; with two assets, use `--max-weight 0.60` or higher. Data must have positive prices, unique increasing dates, at least two assets, and no missing/infinite values. Nothing is silently sorted, filled, or dropped except the first undefined return. Align trading calendars explicitly and record any missing-data policy. Splits and dividends must be handled in the source data; currency movements matter for cross-market portfolios.
 
 ```bash
-mafinrisk analyze --prices my_adjusted_prices.csv --output reports/market \
+portfolio-optimizer analyze --prices my_adjusted_prices.csv --output reports/market \
   --source-label "Adjusted prices from YOUR_PROVIDER; downloaded YYYY-MM-DD"
 ```
 
@@ -152,7 +152,7 @@ The source label is user-provided metadata, not verified provenance. Do not comm
 ## Project structure
 
 ```text
-src/mafinrisk/       Data validation, optimization, evaluation, CLI and plots
+src/portfolio_optimizer/       Data validation, optimization, evaluation, CLI and plots
 tests/              Analytical, numerical, data and integration tests
 examples/           Asset-specific constraint example
 data/               Reproducible synthetic prices and provenance
@@ -172,6 +172,5 @@ This is an educational research tool, not investment advice or a production trad
 - Markowitz, H. (1952), *Portfolio Selection*, Journal of Finance, 7(1), 77–91. [DOI](https://doi.org/10.1111/j.1540-6261.1952.tb01525.x).
 - Sharpe, W. F. (1966), *Mutual Fund Performance*, Journal of Business, 39(1), 119–138. [DOI](https://doi.org/10.1086/294846).
 - [SciPy SLSQP documentation](https://docs.scipy.org/doc/scipy/reference/optimize.minimize-slsqp.html).
-- [Bocconi MAFINRISK programme](https://www.unibocconi.it/en/programs/specialized-masters-programs/mafinrisk-master-quantitative-finance-and-risk-management).
 
 MIT licensed. Contributions should include a reproducible example and tests for any numerical behaviour change.

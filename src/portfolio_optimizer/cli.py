@@ -8,7 +8,7 @@ from .optimizer import OptimizationError
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="MAFINRISK-inspired mean-variance portfolio lab")
+    parser = argparse.ArgumentParser(description="Portfolio optimizer for mean-variance analysis")
     sub = parser.add_subparsers(dest="command", required=True)
     sample = sub.add_parser("sample", help="Generate fictional correlated asset price indices")
     sample.add_argument("--output", type=Path, default=Path("data/sample_prices.csv"))

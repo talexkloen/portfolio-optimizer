@@ -20,5 +20,5 @@ jobs:
       - run: ruff check .
       - run: ruff format --check .
       - run: pytest
-      - run: mafinrisk analyze --prices data/sample_prices.csv --output reports --source-label "Synthetic demonstration"
+      - run: portfolio-optimizer analyze --prices data/sample_prices.csv --output reports --source-label "Synthetic demonstration"
       - run: python -m build

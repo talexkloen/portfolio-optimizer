@@ -8,9 +8,9 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from mafinrisk import estimate_moments, load_prices, price_returns, synthetic_prices
-from mafinrisk.evaluation import holdout_metrics
-from mafinrisk.report import build_report
+from portfolio_optimizer import estimate_moments, load_prices, price_returns, synthetic_prices
+from portfolio_optimizer.evaluation import holdout_metrics
+from portfolio_optimizer.report import build_report
 
 
 def test_sample_reproducibility_and_roundtrip(tmp_path):
@@ -97,7 +97,7 @@ def test_report_no_lookahead(tmp_path):
 def test_cli_errors_and_sample(tmp_path):
     path = tmp_path / "prices.csv"
     good = subprocess.run(
-        [sys.executable, "-m", "mafinrisk.cli", "sample", "--output", str(path)],
+        [sys.executable, "-m", "portfolio_optimizer.cli", "sample", "--output", str(path)],
         capture_output=True,
         text=True,
     )
@@ -107,7 +107,7 @@ def test_cli_errors_and_sample(tmp_path):
         [
             sys.executable,
             "-m",
-            "mafinrisk.cli",
+            "portfolio_optimizer.cli",
             "analyze",
             "--prices",
             str(path),

@@ -2,7 +2,7 @@
 
 import pandas as pd
 
-from mafinrisk import PortfolioOptimizer, estimate_moments, load_prices, price_returns
+from portfolio_optimizer import PortfolioOptimizer, estimate_moments, load_prices, price_returns
 
 prices = load_prices("data/sample_prices.csv")
 returns = price_returns(prices)

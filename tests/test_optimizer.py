@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from mafinrisk import PortfolioOptimizer
+from portfolio_optimizer import PortfolioOptimizer
 
 
 @pytest.fixture
