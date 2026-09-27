@@ -6,7 +6,7 @@
 ![Python](https://img.shields.io/badge/Python-3.11%2B-3776AB)
 ![License](https://img.shields.io/badge/License-MIT-teal)
 
-Independent educational project inspired by the quantitative-finance and risk-management themes of [Bocconi's MAFINRISK programme] for my personal practice and interest. (https://www.unibocconi.it/en/programs/specialized-masters-programs/mafinrisk-master-quantitative-finance-and-risk-management). 
+Independent educational project inspired by quantitative-finance and risk-management themes for my personal practice and interest.
 
 ![Efficient frontier and portfolio allocations](docs/efficient_frontier.svg)
 
@@ -166,14 +166,6 @@ pyproject.toml      Package, dependency and tooling configuration
 Sample means are noisy, and small changes can substantially alter maximum-Sharpe allocations. Position limits regularize concentration but do not guarantee stability. Covariance shrinkage introduces bias as well as reducing estimation noise. The model considers variance rather than tail asymmetry or downside losses, and assumes frictionless continuous allocations. If no feasible portfolio has positive expected excess return, the maximum-Sharpe method deliberately raises an error; minimum variance remains available through the Python API.
 
 This is an educational research tool, not investment advice or a production trading system.
-
-## CV and interview use
-
-Suggested project bullet, after you have reviewed and can explain the implementation:
-
-> Developed a Python mean–variance portfolio optimizer with constrained minimum-variance and maximum-Sharpe allocations, covariance shrinkage, efficient-frontier visualization, and chronological holdout evaluation; validated numerical results against analytical solutions and automated tests.
-
-See [interview notes](docs/interview_notes.md) for the derivation, trade-offs, and extensions worth discussing. Describe this as an independent project; do not imply official Bocconi affiliation or unsupported performance claims.
 
 ## References
 
