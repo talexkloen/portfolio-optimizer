@@ -1,0 +1,14 @@
+{
+  "source": "Synthetic demonstration",
+  "train_start": "2021-01-05",
+  "train_end": "2023-11-28",
+  "test_start": "2023-11-29",
+  "test_end": "2024-11-14",
+  "train_observations": 756,
+  "test_observations": 252,
+  "risk_free_rate": 0.02,
+  "max_weight": 0.4,
+  "shrinkage": 0.1,
+  "periods_per_year": 252,
+  "holdout_assumption": "Daily rebalancing to fixed training weights; no costs"
+}

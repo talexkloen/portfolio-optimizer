@@ -1,0 +1,7 @@
+*.py text eol=lf
+*.md text eol=lf
+*.yml text eol=lf
+*.toml text eol=lf
+docs/*.svg -whitespace linguist-generated=true
+docs/*.csv linguist-generated=true
+data/sample_prices.csv linguist-generated=true
